@@ -16,6 +16,7 @@ export const databaseProviders = [
         username: db.username,
         password: db.password,
         database: db.database,
+        ssl: true,
       });
       sequelize.addModels([Todo]);
       await sequelize.sync();
