@@ -9,6 +9,6 @@ async function bootstrap() {
     prefix: 'api/',
   });
   app.enableCors();
-  await app.listen(`${+process.env.APP_PORT}` || 8080);
+  await app.listen(`${+process.env.APP_PORT}` || 8080, '0.0.0.0');
 }
 bootstrap();
