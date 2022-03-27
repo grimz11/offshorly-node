@@ -1,6 +1,7 @@
 import { DatabaseModule, DbConfig } from '@core/configs';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { TODO_REPOSITORY } from './app.constant';
 import { AppController } from './app.controller';
 import { Todo } from './app.entity';
 import { AppService } from './app.service';
@@ -14,7 +15,7 @@ import { AppService } from './app.service';
   providers: [
     AppService,
     {
-      provide: 'TODO_REPOSITORY',
+      provide: TODO_REPOSITORY,
       useValue: Todo,
     },
   ],

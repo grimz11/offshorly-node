@@ -6,11 +6,11 @@ export class Todo extends Model<Todo> {
     type: DataType.STRING,
     allowNull: false,
   })
-  name: string;
+  text: string;
 
   @Column({
     type: DataType.BOOLEAN,
     allowNull: false,
   })
-  state: string;
+  state: boolean;
 }
