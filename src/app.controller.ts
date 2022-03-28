@@ -22,10 +22,19 @@ export class AppController {
     return await this.appService.getAllAsync();
   }
 
-  @Patch(':id')
+  @Patch(':id/state')
   @HttpCode(204)
   async updateTodoAsync(@Param() { id }: TodoRequestDto): Promise<void> {
     await this.appService.updateAsync(id);
+  }
+
+  @Patch(':id/text')
+  @HttpCode(204)
+  async updateTodoTextAsync(
+    @Param() { id }: TodoRequestDto,
+    @Body() { text }: TodoRequestDto,
+  ): Promise<void> {
+    await this.appService.updateTodoTextAsync(id, text);
   }
 
   @Delete(':id')

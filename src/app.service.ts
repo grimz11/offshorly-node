@@ -32,4 +32,12 @@ export class AppService {
       where: { id },
     });
   }
+
+  async updateTodoTextAsync(id: number, text: string): Promise<any> {
+    const todo = Object.assign(new Todo(), { id, text });
+
+    return await this.todoRepository.update<Todo>(todo.get(), {
+      where: { id },
+    });
+  }
 }
