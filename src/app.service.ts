@@ -16,7 +16,7 @@ export class AppService {
   }
 
   async createAsync(payload: TodoRequestDto): Promise<Todo> {
-    const todo = Object.assign(new Todo(), { ...payload, state: true });
+    const todo = Object.assign(new Todo(), { ...payload, state: false });
     return await this.todoRepository.create<Todo>(todo.get());
   }
 
